@@ -3,8 +3,10 @@ import Home from './screens/home'
 import { GameProvider } from './hooks/UseGame'
 
 export const GIRL_COLUMNS = 4
-export const GIRL_COLUMN_SPACE = 1
-export const GIRL_ROW_SPACE = 2
+export const GIRL_COLUMN_SPACE = 0.6
+export const GIRL_ROW_SPACE = 1.5
+export const SCROLL_SPEED = 3
+export const GROUND_LENGTH = 16
 
 function App() {
 
