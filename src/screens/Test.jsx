@@ -3,6 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { XR, createXRStore } from '@react-three/xr'
 import { useRef, useState } from 'react'
 import { BirtdayModel } from '../components/Model'
+import { Model } from '../components/Ribbon'
+import { DirectionalLight } from 'three'
 
 const store = createXRStore()
 
@@ -15,13 +17,16 @@ export default function Test() {
       <button onClick={() => store.enterAR()}>Enter AR</button>
       <Canvas>
         <XR store={store}>
-          {/* <mesh ref={ref}  pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -3]}>
-            <boxGeometry />
-            <meshBasicMaterial color={red ? 'red' : 'blue'} />
-          </mesh> */}
-          <Environment preset='sunset' />
+          <Environment files={'./nebula-7.hdr'} background />
           <OrbitControls />
-          <BirtdayModel position-z={-25} />
+          <BirtdayModel position-z={-15} position-y={-3} />
+          <directionalLight
+            // ref={lightRef}
+            position={[10, 10, 10]}
+            intensity={5}
+            castShadow
+          />
+          <Model />
         </XR>
       </Canvas>
     </>
