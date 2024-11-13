@@ -20,7 +20,11 @@ export function SantaModel(props) {
 
   useEffect(()=>{
     actions['run'].play() 
-  }, [])
+    // Change the material color to red
+    // materials._100_SaintClaus.color.set('blue')
+    nodes.mesh_char_135.material.color.set('yellow')
+    console.log(nodes) // or you can use a hex code like '#ff0000'
+  }, [actions,nodes, materials._100_SaintClaus])
 
   return (
     <group ref={group} {...props} dispose={null}>

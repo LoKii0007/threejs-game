@@ -10,6 +10,24 @@ function GameReducer(state, action) {
             status : 'playing'
         }
     }
+
+    if( action.type === 'jump' ){
+        //TODO jump functionality
+        console.log('jump action')
+        return state
+    }
+
+    if( action.type === 'dodgeLeft' ){
+        //TODO jump functionality
+        console.log('left action')
+        return state
+    }
+
+    if( action.type === 'dodgeRight' ){
+        //TODO jump functionality
+        console.log('right action')
+        return state
+    }
     
     if(action.type === 'like' || action.type === 'attack'){
         const snowman = [...state.snowman]
@@ -23,6 +41,13 @@ function GameReducer(state, action) {
                     deathCause : action.type
                 }
             }
+        }
+    }
+
+    if( action.type === 'end'){
+        return {
+            ...state, 
+            status : 'end'
         }
     }
 }
@@ -53,7 +78,7 @@ export const GameProvider = ({ children }) => {
         await insertCoin({ liveMode: "tiktok" });
         onTikTokLiveEvent((event) => {
             console.log("tiktok live event", event);
-            // addCard(event.type, "@" + event.data.username, event.data.userPhotoUrl, event.data.comment)
+            addCard(event.type, "@" + event.data.username, event.data.userPhotoUrl, event.data.comment)
         });
     }
 
