@@ -4,18 +4,23 @@ Command: npx gltfjsx@6.5.2 model.gltf --transform
 Files: model.gltf [13.87MB] > C:\Users\lokes\downloads\birthday\model-transformed.glb [1.79MB] (87%)
 */
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function BirtdayModel(props) {
   const group = React.useRef()
   const { nodes, materials, animations } = useGLTF('/model-transformed.glb')
   const { actions } = useAnimations(animations, group)
+  const ribbonRef = useRef()
 
   useEffect(() => {
     Object.keys(actions).forEach(action => {
       actions[action].play();
     });
+
+    if (ribbonRef.current) {
+      ribbonRef.current.layers.set(1);
+    }
   }, [actions])
 
   return (
@@ -38,7 +43,8 @@ export function BirtdayModel(props) {
           <mesh name="Mesh179_12" geometry={nodes.Mesh179_12.geometry} material={materials.PaletteMaterial001} />
         </group>
         <mesh name="Pillar_1002" geometry={nodes.Pillar_1002.geometry} material={materials['Wood.001']} position={[8.534, 4.759, 9.348]} />
-        <mesh name="Sides_Ribbon" geometry={nodes.Sides_Ribbon.geometry} material={materials.PaletteMaterial004} />
+        
+        <mesh ref={ribbonRef} name="Sides_Ribbon" geometry={nodes.Sides_Ribbon.geometry} material={materials.PaletteMaterial004} />
       </group>
     </group>
   )
