@@ -15,14 +15,14 @@ export const BOT_SPEED = 0.001
 
 function App() {
 
-  useEffect(() => {
-    const vrButton = VRButton.createButton();
-    document.body.appendChild(vrButton);
+  // useEffect(() => {
+  //   const vrButton = VRButton.createButton();
+  //   document.body.appendChild(vrButton);
     
-    return () => {
-      document.body.removeChild(vrButton);
-    };
-  }, [])
+  //   return () => {
+  //     document.body.removeChild(vrButton);
+  //   };
+  // }, [])
 
   return (
     <>
