@@ -14,8 +14,8 @@ export default function Test() {
 
   return (
     <>
-      <button className="bg-white text-black" onClick={() => store.enterAR()}>Enter AR</button>
-      <button className="bg-white text-black" onClick={() => store.enterVR()}>Enter vR</button>
+      {/* <button className="bg-white text-black" onClick={() => store.enterAR()}>Enter AR</button> */}
+      <button className="bg-white text-black fixed bottom-12 z-10 py-3 text-3xl rounded-lg px-8 " onClick={() => store.enterVR()}>Enter VR</button>
       <Canvas>
         <XR store={store}>
           <Environment files={"./nebula-7.hdr"} background />

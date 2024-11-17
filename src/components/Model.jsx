@@ -34,7 +34,7 @@ export function BirtdayModel(props) {
         </group>
         <mesh name="Pillar_1002" geometry={nodes.Pillar_1002.geometry} material={materials['Wood.001']} position={[8.534, 4.759, 9.348]} />
         
-        <mesh name="Sides_Ribbon" geometry={nodes.Sides_Ribbon.geometry} tonMapped={false} material={materials.PaletteMaterial004} >
+        <mesh name="Sides_Ribbon" geometry={nodes.Sides_Ribbon.geometry} material={materials.PaletteMaterial004} >
           <meshStandardMaterial color="red" emissive={"white"} emissiveIntensity={1} toneMapped={false} />
           </mesh>
       </group>
