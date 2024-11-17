@@ -22,10 +22,10 @@ export default function Test() {
           <OrbitControls />
           <BirtdayModel position-z={-15} position-y={-7} />  //* only in this model to a specific mesh
 
-          <Model />
-          <PinkModel position-z={-10} />
-          <TransModel position-z={-10} />
-          <GoldModel position-z={-10} />
+          {/* <Model /> */}
+          {/* <PinkModel position-z={-10} /> */}
+          {/* <TransModel position-z={-10} /> */}
+          {/* <GoldModel position-z={-10} /> */}
           <directionalLight position={[0, 10, 0]} intensity={5} castShadow />
           <Shadow />
 

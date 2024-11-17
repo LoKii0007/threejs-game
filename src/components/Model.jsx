@@ -6,12 +6,12 @@ export function BirtdayModel(props) {
   const { nodes, materials, animations } = useGLTF('/model-transformed.glb')
   const { actions } = useAnimations(animations, group)
 
-  useEffect(() => {
-    Object.keys(actions).forEach(action => {
-      actions[action].play();
-    });
+  // useEffect(() => {
+  //   Object.keys(actions).forEach(action => {
+  //     actions[action].play();
+  //   });
 
-  }, [actions])
+  // }, [actions])
 
   return (
     <group ref={group} {...props} dispose={null}>
